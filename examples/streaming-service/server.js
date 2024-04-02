@@ -18,25 +18,25 @@ app
 
 app.get('/', async (req, res) => {
 
-  const movieData = await getMovies();
-  return res.send(renderTemplate('views/index.liquid', { title: 'Movies', movieData }));
+  // const movieData = await getMovies();
+  return res.send(renderTemplate('views/index.liquid'));
   // return res.send(renderTemplate('views/index.liquid', { title: 'Home' }));
 });
 
-app.get('/movie/:id/', async (req, res) => {
-  const movieId = req.params.id;
-  const movie = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.MOVIEDB_TOKEN}`).then(res => res.json());
-  return res.send(renderTemplate('views/detail.liquid', { title: 'Movie', movie }));
-});
+// app.get('/movie/:id/', async (req, res) => {
+//   const movieId = req.params.id;
+//   const movie = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.MOVIEDB_TOKEN}`).then(res => res.json());
+//   return res.send(renderTemplate('views/detail.liquid', { title: 'Movie', movie }));
+// });
 
-const getMovies = async () => {
-  const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=${process.env.MOVIEDB_TOKEN}`);
-  const movieData = await response.json();
+// const getMovies = async () => {
+//   const response = await fetch(`https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=${process.env.MOVIEDB_TOKEN}`);
+//   const movieData = await response.json();
 
 
-  console.log('movieData', movieData);
-  return movieData;
-};
+//   console.log('movieData', movieData);
+//   return movieData;
+// };
 
 
 const renderTemplate = (template, data) => {
