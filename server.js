@@ -54,6 +54,39 @@ app.get('/search', async (req, res) => {
     }
 });
 
+// Endpoint for the quiz page
+app.get('/quiz', async (req, res) => {
+    res.render('pages/quiz'); // Ensure you have a quiz.ejs file under pages directory
+});
+
+
+app.get('/quiz/movies', async (req, res) => {
+    const apiKey = process.env.API_KEY;
+    // You might want to fetch more than one page or a different set to have a diverse pool
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const movies = data.results;
+
+        // Shuffle array using the Fisher-Yates (Durstenfeld) shuffle algorithm
+        for (let i = movies.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [movies[i], movies[j]] = [movies[j], movies[i]]; // Swap elements
+        }
+
+        // Now, select the first 4 movies after shuffling
+        const selectedMovies = movies.slice(0, 4);
+
+        res.json(selectedMovies);
+    } catch (error) {
+        console.error('Fetching movies for quiz failed:', error);
+        res.status(500).send('Failed to fetch movies for the quiz');
+    }
+});
+
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

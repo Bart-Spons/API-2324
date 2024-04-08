@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <title>Welkom bij Mijn API website</title>
+  </head>
+
+  <body>
+    <h2>Quiz</h2>
+
+    <div id="startSection">
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <button id="startButton">Start Quiz</button>
+    </div>
+
+    <div id="quizSection" style="display: none">
+      <p id="questionText"></p>
+      <ul id="movieOptions"></ul>
+    </div>
+
+    <footer><%- include('../partials/footer.ejs') %></footer>
+  </body>
+</html>
