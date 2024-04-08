@@ -34,7 +34,6 @@ app.get('/movies', async (req, res) => {
 });
 
 
-
 app.get('/search', async (req, res) => {
     const { search } = req.query; // Get the search query from the request's query string
     if (!search) {
