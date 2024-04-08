@@ -1,3 +1,6 @@
+// This script is for the quiz
+// Current only for the quiz
+
 let currentQuestionIndex = 0;
 let score = 0;
 const totalQuestions = 5; // Adjust if you plan to have more questions
@@ -6,7 +9,25 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('startButton').addEventListener('click', startQuiz);
 });
 
+
+// async function fetchMoviesAndDisplayQuestion() {
+//     // Fetch movies specifically for the quiz
+//     const movies = await fetch('/quiz/movies').then(response => response.json());
+//     // After fetching movies from TMDb API
+//     movies.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+
+
+//     displayQuestion(movies);
+// }
+
+async function fetchMoviesAndDisplayQuestion() {
+    const movies = await fetch('/quiz/movies').then(response => response.json());
+    displayQuestion(movies);
+}
+
+
 function startQuiz() {
+    // first check if the user has entered their name
     const name = document.getElementById('nameInput').value;
     if (name.trim() === '') {
         alert('Please enter your name.');
@@ -24,29 +45,28 @@ function startQuiz() {
     fetchMoviesAndDisplayQuestion();
 }
 
-async function fetchMoviesAndDisplayQuestion() {
-    // Fetch movies specifically for the quiz
-    const movies = await fetch('/quiz/movies').then(response => response.json());
-
-    displayQuestion(movies);
-}
 
 function displayQuestion(movies) {
     const questionText = document.getElementById('questionText');
-    questionText.innerText = `Which of these movies is the oldest? (Question ${currentQuestionIndex + 1} of ${totalQuestions})`;
+    questionText.innerText = "Which of these movies is the oldest?";
 
-    const movieOptions = document.getElementById('movieOptions');
+    const movieOptions = document.getElementById('movieOptions'); // Correctly define movieOptions
     movieOptions.innerHTML = ''; // Clear previous options
+
+    // Identify the oldest movie
+    const oldestMovie = movies.reduce((oldest, movie) =>
+        new Date(oldest.release_date) < new Date(movie.release_date) ? oldest : movie, movies[0]);
 
     movies.forEach(movie => {
         const li = document.createElement('li');
         const button = document.createElement('button');
         button.innerText = `${movie.title} (${movie.release_date})`;
-        button.addEventListener('click', () => checkAnswer(movie, movies[0]));
+        button.addEventListener('click', () => checkAnswer(movie, oldestMovie));
         li.appendChild(button);
-        movieOptions.appendChild(li);
+        movieOptions.appendChild(li); // Add each movie as an option
     });
 }
+
 
 function checkAnswer(selectedMovie, correctMovie) {
     if (selectedMovie.id === correctMovie.id) {
