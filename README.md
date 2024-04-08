@@ -81,3 +81,14 @@ de 3 criteria hieronder moeten voldoen. Een hoger cijfer kan je halen door verde
 
 Voel je vrij om je eigen technolgieën te kiezen, zolang je maar kan uitleggen waarom je deze hebt gekozen en zolang
 je geen gebruik maakt van een framework zoals React, Vue, Svelte, Angular, etc. 
+
+<hr>
+
+# Hoe ga ik de de quiz maken?
+
+Client side
+
+- start button
+- functie om movies te laten zien 
+
+Server side

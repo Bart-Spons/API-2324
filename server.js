@@ -56,38 +56,42 @@ app.get('/search', async (req, res) => {
 
 // Endpoint for the quiz page
 app.get('/quiz', async (req, res) => {
-    res.render('pages/quiz');
+    res.render('pages/quiz', { title: 'Welcome to my quiz' });
 });
 
-    app.get('/quiz/movies', async (req, res) => {
-        const apiKey = process.env.API_KEY;
-        // Top rated (everyone knows many of them)
-        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
+app.get('/quiz/movies', async (req, res) => {
+    const apiKey = process.env.API_KEY;
+    // Top rated (everyone knows many of them)
+    const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 
 
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            let movies = data.results;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        let movies = data.results;
 
-            // Shuffle the movies array to randomize the quiz options
-            for (let i = movies.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [movies[i], movies[j]] = [movies[j], movies[i]]; // Swap elements & choose random movies
-                // After fetching movies from TMDb API
+        // Shuffle the movies array to randomize the quiz options
+        for (let i = movies.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [movies[i], movies[j]] = [movies[j], movies[i]]; // Swap elements & choose random movies
+            // After fetching movies from TMDb API
 
 
-            }
-
-            // Select the first 4 movies after shuffling
-            const selectedMovies = movies.slice(0, 4);
-
-            res.json(selectedMovies);
-        } catch (error) {
-            console.error('Fetching top rated movies for quiz failed:', error);
-            res.status(500).send('Failed to fetch top rated movies for the quiz');
         }
-    });
+
+        // Select the first 4 movies after shuffling
+        const selectedMovies = movies.slice(0, 4);
+
+        res.json(selectedMovies);
+    } catch (error) {
+        console.error('Fetching top rated movies for quiz failed:', error);
+        res.status(500).send('Failed to fetch top rated movies for the quiz');
+    }
+});
+
+app.get('/highscore', async (req, res) => {
+    res.render('pages/highscore', { title: 'High Scores' });
+});
 
 // Start the server
 app.listen(PORT, () => {

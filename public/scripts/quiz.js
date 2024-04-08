@@ -3,22 +3,35 @@
 
 let currentQuestionIndex = 0;
 let score = 0;
-const totalQuestions = 5; // Adjust if you plan to have more questions
+const totalQuestions = 3;
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('startButton').addEventListener('click', startQuiz);
 });
 
+function displayQuestion(movies) {
+    const questionText = document.getElementById('questionText');
+    questionText.innerText = "Which of these top ranked movies is the oldest?";
 
-// async function fetchMoviesAndDisplayQuestion() {
-//     // Fetch movies specifically for the quiz
-//     const movies = await fetch('/quiz/movies').then(response => response.json());
-//     // After fetching movies from TMDb API
-//     movies.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+    const movieOptions = document.getElementById('movieOptions'); // Correctly define movieOptions
+    movieOptions.innerHTML = ''; // Clear previous options
 
+    // Identify the oldest movie
+    // chat gpt
+    const oldestMovie = movies.reduce((oldest, movie) =>
+        new Date(oldest.release_date) < new Date(movie.release_date) ? oldest : movie, movies[0]);
 
-//     displayQuestion(movies);
-// }
+    movies.forEach(movie => {
+        const li = document.createElement('li');
+        const button = document.createElement('button');
+        // button.innerText = `${movie.title} (${movie.release_date})`;
+        button.innerText = `${movie.title}`;
+        button.addEventListener('click', () => checkAnswer(movie, oldestMovie));
+        li.appendChild(button);
+        movieOptions.appendChild(li); // Add each movie as an option
+    });
+}
+
 
 async function fetchMoviesAndDisplayQuestion() {
     const movies = await fetch('/quiz/movies').then(response => response.json());
@@ -46,26 +59,6 @@ function startQuiz() {
 }
 
 
-function displayQuestion(movies) {
-    const questionText = document.getElementById('questionText');
-    questionText.innerText = "Which of these movies is the oldest?";
-
-    const movieOptions = document.getElementById('movieOptions'); // Correctly define movieOptions
-    movieOptions.innerHTML = ''; // Clear previous options
-
-    // Identify the oldest movie
-    const oldestMovie = movies.reduce((oldest, movie) =>
-        new Date(oldest.release_date) < new Date(movie.release_date) ? oldest : movie, movies[0]);
-
-    movies.forEach(movie => {
-        const li = document.createElement('li');
-        const button = document.createElement('button');
-        button.innerText = `${movie.title} (${movie.release_date})`;
-        button.addEventListener('click', () => checkAnswer(movie, oldestMovie));
-        li.appendChild(button);
-        movieOptions.appendChild(li); // Add each movie as an option
-    });
-}
 
 
 function checkAnswer(selectedMovie, correctMovie) {
@@ -82,8 +75,28 @@ function checkAnswer(selectedMovie, correctMovie) {
     }
 }
 
+
+
 function showScore() {
-    document.getElementById('quizSection').style.display = 'none'; // Hide quiz section
+    // Assuming you have a playerName variable. Adjust as necessary.
+    const playerName = document.getElementById('nameInput').value; // Example of fetching player name
+
+    const quizAttempt = {
+        name: playerName,
+        score: score,
+        totalQuestions: totalQuestions,
+        date: new Date().toISOString() // Store the date of the attempt for reference
+    };
+
+    // Fetch existing quiz data from localStorage, or initialize an empty array if none exists
+    const quizData = JSON.parse(localStorage.getItem('quizData')) || [];
+    quizData.push(quizAttempt); // Add the latest quiz attempt to the array
+
+    // Save the updated array back to localStorage
+    localStorage.setItem('quizData', JSON.stringify(quizData));
+
+    // Hide quiz section and show score
+    document.getElementById('quizSection').style.display = 'none';
     const scoreSection = document.getElementById('scoreSection');
     if (!scoreSection) {
         alert(`Your score: ${score}/${totalQuestions}`);
@@ -92,3 +105,4 @@ function showScore() {
     scoreSection.innerText = `Your score: ${score}/${totalQuestions}`; // Display score
     scoreSection.style.display = 'block';
 }
+
