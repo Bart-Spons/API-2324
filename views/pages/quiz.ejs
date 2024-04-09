@@ -6,19 +6,21 @@
   </head>
 
   <body>
-    <h1><%= title %></h1>
+    <header><%- include('../partials/nav.ejs') %></header>
 
-    <div id="startSection">
-      <input type="text" id="nameInput" placeholder="Enter your name" />
-      <button id="startButton">Start Quiz</button>
-    </div>
+    <main>
+      <div id="startSection">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button id="startButton">Start Quiz</button>
+      </div>
 
-    <div id="quizSection" style="display: none">
-      <p id="questionText"></p>
-      <ul id="movieOptions"></ul>
-    </div>
+      <div id="quizSection" style="display: none">
+        <p id="questionText"></p>
+        <ul id="movieOptions"></ul>
+      </div>
 
-    <div id="scoreSection" style="display: none"></div>
+      <div id="scoreSection" style="display: none"></div>
+    </main>
 
     <footer><%- include('../partials/footer.ejs') %></footer>
   </body>

@@ -25,7 +25,7 @@ function displayQuizAttempts() {
 // Call this function when you want to display the quiz attempts, e.g., on page load
 displayQuizAttempts();
 
-// I want to clear the data from the list
+// Clear all the data
 function clearQuizAttempts() {
     localStorage.removeItem('quizData');
     displayQuizAttempts();

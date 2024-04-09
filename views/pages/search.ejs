@@ -2,21 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <%- include('../partials/head.ejs') %>
     <title>Search</title>
   </head>
   <body>
-    <h1>Search</h1>
+    <header><%- include('../partials/nav.ejs') %></header>
 
-    <form action="/search" method="get">
-      <input
-        type="text"
-        name="search"
-        value="<%= searchQuery %>"
-        placeholder="Search for movies..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <main>
+      <form action="/search" method="get">
+        <input
+          type="text"
+          name="search"
+          value="<%= searchQuery %>"
+          placeholder="Search for movies..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </main>
 
-    <%- include('../components/api.ejs') %>
+    <%- include('../components/api.ejs') %> <%-
+    include('../partials/footer.ejs') %>
   </body>
 </html>
