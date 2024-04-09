@@ -1,15 +1,11 @@
-<!-- Hier komt de api -->
-<div id="movies-container">
-    <% if (movies && movies.length > 0) { %> <% movies.forEach(movie => { %>
-    <div class="movie">
-      <h2><%= movie.title %></h2>
-      <img
-        src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>"
-        alt="<%= movie.title %>"
-      />
-      <p><%= movie.overview %></p>
-    </div>
-    <% }); %> <% } else { %>
-    <p>No movies to display.</p>
-    <% } %>
-  </div>
+<article class="gallery">
+  <!-- Dynamically load images using your server-side template engine -->
+  <% if (movies && movies.length > 0) { %> <% movies.forEach(movie => { %>
+  <img
+    src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>"
+    alt="<%= movie.title %>"
+  />
+  <% }); %> <% } else { %>
+  <p>No movies to display.</p>
+  <% } %>
+</article>

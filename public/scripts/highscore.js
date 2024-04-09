@@ -1,29 +1,42 @@
-function displayQuizAttempts() {
+function displayQuizAttempts(sortBy = 'date') {
     const quizAttemptsContainer = document.getElementById('quizAttempts');
-    const quizData = JSON.parse(localStorage.getItem('quizData')) || [];
+    let quizData = JSON.parse(localStorage.getItem('quizData')) || [];
 
-    // Clear existing content
-    quizAttemptsContainer.innerHTML = '';
-
-    // Check if there's any data to display
-    if (quizData.length === 0) {
-        quizAttemptsContainer.innerHTML = '<p>No quiz attempts to display.</p>';
-        return;
+    // Sorteerlogica
+    switch (sortBy) {
+        case 'name':
+            quizData.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'score':
+            quizData.sort((a, b) => b.score - a.score); // Hoogste score eerst
+            break;
+        case 'date':
+            quizData.sort((a, b) => new Date(b.date) - new Date(a.date)); // Nieuwste eerst
+            break;
     }
 
-    // Create a list of quiz attempts
-    const list = document.createElement('ul');
-    quizData.forEach(attempt => {
-        const item = document.createElement('li');
-        item.textContent = `Name: ${attempt.name}, Score: ${attempt.score}/${attempt.totalQuestions}, Date: ${attempt.date}`;
-        list.appendChild(item);
-    });
-
-    quizAttemptsContainer.appendChild(list);
+    // Bouw de tabel
+    quizAttemptsContainer.innerHTML = quizData.length === 0 ? '<p>No quiz attempts to display.</p>' : buildTable(quizData);
 }
 
-// Call this function when you want to display the quiz attempts, e.g., on page load
+function buildTable(data) {
+    let table = '<table><tr><th>Name</th><th>Score</th><th>Date</th></tr>';
+    data.forEach(attempt => {
+        table += `<tr><td>${attempt.name}</td><td>${attempt.score}/${attempt.totalQuestions}</td><td>${attempt.date}</td></tr>`;
+    });
+    table += '</table>';
+    return table;
+}
+
+// Event listeners voor de sorteerknoppen
+document.getElementById('sortByName').addEventListener('click', () => displayQuizAttempts('name'));
+document.getElementById('sortByScore').addEventListener('click', () => displayQuizAttempts('score'));
+document.getElementById('sortByDate').addEventListener('click', () => displayQuizAttempts('date'));
+document.getElementById('clearButton').addEventListener('click', clearQuizAttempts);
+
+// Toon initiële data gesorteerd op datum
 displayQuizAttempts();
+
 
 // Clear all the data
 function clearQuizAttempts() {
@@ -31,5 +44,4 @@ function clearQuizAttempts() {
     displayQuizAttempts();
 }
 
-// Add a click event listener to the button
-document.getElementById('clearButton').addEventListener('click', clearQuizAttempts);
+

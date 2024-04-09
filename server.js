@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
     res.render('pages/index', { title: 'Welcome to My API Website' });
+
 });
 
 // Movies route: Fetch movie data and display it
