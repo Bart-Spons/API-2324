@@ -24,12 +24,15 @@ function displayQuestion(movies) {
     movies.forEach(movie => {
         const li = document.createElement('li');
         const button = document.createElement('button');
-        // button.innerText = `${movie.title} (${movie.release_date})`;
-        button.innerText = `${movie.title}`;
+        const img = document.createElement('img');
+        img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        img.alt = movie.title;
+        button.appendChild(img);
         button.addEventListener('click', () => checkAnswer(movie, oldestMovie));
         li.appendChild(button);
-        movieOptions.appendChild(li); // Add each movie as an option
+        movieOptions.appendChild(li);
     });
+
 }
 
 
