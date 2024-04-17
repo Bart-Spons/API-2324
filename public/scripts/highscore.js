@@ -19,14 +19,26 @@ function displayQuizAttempts(sortBy = 'date') {
     quizAttemptsContainer.innerHTML = quizData.length === 0 ? '<p>No quiz attempts to display.</p>' : buildTable(quizData);
 }
 
+// function buildTable(data) {
+//     let table = '<table><tr><th>Name</th><th>Score</th><th>Date</th></tr>';
+//     data.forEach(attempt => {
+//         table += `<tr><td>${attempt.name}</td><td>${attempt.score}/${attempt.totalQuestions}</td><td>${attempt.date}</td></tr>`;
+//     });
+//     table += '</table>';
+//     return table;
+// }
 function buildTable(data) {
     let table = '<table><tr><th>Name</th><th>Score</th><th>Date</th></tr>';
     data.forEach(attempt => {
-        table += `<tr><td>${attempt.name}</td><td>${attempt.score}/${attempt.totalQuestions}</td><td>${attempt.date}</td></tr>`;
+        // Format the date to only include year, month, and day
+        const formattedDate = new Date(attempt.date).toISOString().split('T')[0];
+
+        table += `<tr><td>🤵🏻‍♂️ ${attempt.name}</td><td>🏆 ${attempt.score}/${attempt.totalQuestions}</td><td>🗓️ ${formattedDate}</td></tr>`;
     });
     table += '</table>';
     return table;
 }
+
 
 // Event listeners voor de sorteerknoppen
 document.getElementById('sortByName').addEventListener('click', () => displayQuizAttempts('name'));

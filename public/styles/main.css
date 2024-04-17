@@ -24,3 +24,210 @@ form {
 td {
   padding: 1em;
 }
+
+ul {
+  margin-top: 1rem;
+}
+img {
+  width: 15rem;
+}
+
+main li {
+  width: 25%;
+}
+
+main ul {
+  display: flex;
+  text-align-last: center;
+}
+
+#movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 5rem;
+}
+
+.movie {
+  margin: 1rem;
+  width: 10rem;
+}
+
+main button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+form button {
+  color: black;
+}
+
+td {
+  /* text-align: center; */
+}
+
+/* th:nth-of-type(2),
+tr td:nth-of-type(2) {
+  padding: 0 6em;
+}
+
+#sortByScore {
+  margin: 0 5em;
+} */
+
+table {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+#boxWrapper {
+  width: auto;
+  /* height: 300px; */
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  visibility: visible; /* Updated to visible to see the changes */
+  --n: 9; /* Update this count based on the actual number of divs */
+  --min-opacity: 0.1; /* Minimum opacity */
+  --max-opacity: 1; /* Maximum opacity */
+  --var-opacity: calc(var(--max-opacity) - var(--min-opacity));
+  --opacity-increment: calc(var(--var-opacity) / (var(--n) - 1));
+}
+
+#boxWrapper div {
+  width: 5rem;
+  height: 5rem;
+  /* background-color: purple; */
+  background-color: #6f86ff;
+  margin: 0.5rem;
+  display: inline-block;
+  font-size: 3rem;
+  /* line-height: 80px; */
+  line-height: 5rem;
+  color: white;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0.1px);
+}
+
+/* Assigning varying opacities based on div index */
+#boxWrapper > div:nth-of-type(1) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 0);
+}
+#boxWrapper > div:nth-of-type(2) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 1);
+}
+#boxWrapper > div:nth-of-type(3) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 2);
+}
+#boxWrapper > div:nth-of-type(4) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 3);
+}
+#boxWrapper > div:nth-of-type(5) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 4);
+}
+#boxWrapper > div:nth-of-type(6) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 5);
+}
+#boxWrapper > div:nth-of-type(7) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 6);
+}
+#boxWrapper > div:nth-of-type(8) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 7);
+}
+#boxWrapper > div:nth-of-type(9) {
+  opacity: calc(var(--min-opacity) + var(--opacity-increment) * 8);
+}
+
+#sort {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+#name,
+#nameInput {
+  /* height: 200px; */
+  font-size: 1em;
+}
+
+#questionText {
+  text-align-last: center;
+  font-size: 1.5rem;
+}
+
+#scoreSection {
+  font-size: 1.5rem;
+}
+
+.home a {
+  background-color: #6f86ff;
+  /* padding: 1rem; */
+  display: block;
+
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.home a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 1em; /* Spacing between grid items */
+  margin-top: 1em;
+}
+
+.grid-item {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Creates two columns for links */
+  gap: 1em; /* Spacing between links */
+  padding: 1em; /* Padding around grid items */
+  border: 1px solid #ccc; /* Optional border for clarity */
+}
+
+@media screen and (max-width: 1024px) {
+  img {
+    width: 10rem;
+  }
+  #movies-container {
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main ul {
+    /* flex-direction: column; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main ul li {
+    width: 33%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main ul li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main ul li {
+    width: 100%;
+  }
+}

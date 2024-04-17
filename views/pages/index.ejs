@@ -6,8 +6,50 @@
   </head>
 
   <body>
-    <header><%- include('../partials/nav.ejs') %></header>
+    <header><%- include('../partials/nav.ejs') %>
+    <section>
+      <div id="boxWrapper" style="--n: 7">
+        <div>W</div>
+        <div>E</div>
+        <div>L</div>
+        <div>C</div>
+        <div>O</div>
+        <div>M</div>
+        <div>E</div>
+      </div>
+    </section>
+  </header>
 
+    <main>
+      <div class="home">
+        <h2>API</h2>
+        <p>
+          Dit is een website waar je verschillende API's kunt vinden en
+          gebruiken. Je kunt hier informatie vinden over verschillende
+          onderwerpen zoals:
+        </p>
+       
+
+        <section class="grid-container">
+          <div class="grid-item">
+            <a href="/movies">Popular movies</a>
+            </div>
+            <div class="grid-item">
+            <a href="/search">Seach</a>
+          </div>
+          <div class="grid-item">
+             
+          <a href="/quiz">Quiz</a>
+          </div>
+          <div class="grid-item">
+          <a href="/highscore">Highscore</a>
+          </div>
+      </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="../scripts/main.js"></script>
     <footer><%- include('../partials/footer.ejs') %></footer>
   </body>
 </html>

@@ -106,6 +106,16 @@ function showScore() {
         return;
     }
     scoreSection.innerText = `Your score: ${score}/${totalQuestions}`; // Display score
+    scoreSection.innerHTML = `Your score: ${score}/${totalQuestions} 
+    <p>Click on the 'View Highscore' button below to see the overall standing</p>
+    <button onclick="window.location.href = '../highscore'">View Highscore</button>`
+
+    // const highscoreButton = document.createElement('button');
+    // highscoreButton.innerText = 'View Highscores';
+    // highscoreButton.addEventListener('click', () => {
+    //     window.location.href = '../highscore'; // Replace with the actual URL of the highscores page
+    // });
+    // scoreSection.appendChild(highscoreButton);
     scoreSection.style.display = 'block';
 }
 

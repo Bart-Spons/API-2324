@@ -13,6 +13,7 @@
         <input
           type="text"
           name="search"
+          id="name"
           value="<%= searchQuery %>"
           placeholder="Search for movies..."
         />
@@ -20,7 +21,7 @@
       </form>
     </main>
 
-    <%- include('../components/api.ejs') %> <%-
+    <%- include('../components/topMovies.ejs') %> <%-
     include('../partials/footer.ejs') %>
   </body>
 </html>

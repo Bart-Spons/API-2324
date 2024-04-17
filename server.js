@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', async (req, res) => {
-    res.render('pages/index', { title: 'Welcome to My API Website' });
+    res.render('pages/index', { title: 'API Website' });
 
 });
 

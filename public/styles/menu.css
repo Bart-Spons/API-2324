@@ -94,4 +94,8 @@ nav {
     font-size: 1.5rem;
     margin-top: 0.4rem;
   }
+  .off-screen-menu.active {
+    width: auto;
+    padding: 1rem;
+  }
 }
