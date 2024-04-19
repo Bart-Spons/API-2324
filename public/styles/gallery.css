@@ -12,9 +12,12 @@ main {
   grid-template-columns: repeat(6, var(--size));
   grid-auto-rows: var(--size);
   margin-bottom: var(--size);
-  place-items: start center;
+  /* place-items: start center; */
   gap: 5px;
   /* z-index: -1; */
+  justify-content: center;
+  margin: 1em;
+
 }
 
 .gallery img {
@@ -53,3 +56,8 @@ main {
     z-index: -1;
   }
 }
+
+/* img {
+  width: 200% !important;
+  height: 200% !important;
+} */

@@ -16,8 +16,21 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', async (req, res) => {
-    res.render('pages/index', { title: 'API Website' });
 
+
+
+    const apiKey = process.env.API_KEY;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        // res.render('pages/movies', { movies: data.results, title: 'Popular Movies' });
+        res.render('pages/index', { movies: data.results, title: 'API Website' });
+    } catch (error) {
+        console.error('Fetching movies failed:', error);
+        res.status(500).send('Failed to fetch movies');
+    }
 
 });
 
