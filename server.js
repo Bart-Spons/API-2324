@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import fetch from 'node-fetch';
+// import powerInfo from 'node-power-info';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
     res.render('pages/index', { title: 'API Website' });
+
 
 });
 

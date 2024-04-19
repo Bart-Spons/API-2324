@@ -21,6 +21,10 @@ form {
   text-decoration: none;
 }
 
+body {
+  min-height: 200vh;
+}
+
 td {
   padding: 1em;
 }
@@ -165,6 +169,64 @@ table {
   font-size: 1.5rem;
 }
 
+#charging {
+  align-content: center;
+}
+
+#level {
+  align-content: center;
+}
+
+#chargingBattery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#chargingLeft {
+  flex: 5;
+  padding: 10px;
+}
+
+#chargingRight {
+  flex: 5;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#chargingOn {
+  display: none;
+  margin-top: -1em;
+}
+
+#chargingOff {
+  display: block;
+  margin-top: -1em;
+}
+
+svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .home a {
   background-color: #6f86ff;
   /* padding: 1rem; */
@@ -183,7 +245,7 @@ table {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  grid-template-columns: repeat(3, 1fr); /* Creates two columns */
   gap: 1em; /* Spacing between grid items */
   margin-top: 1em;
 }
