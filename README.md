@@ -7,7 +7,7 @@ Welkom bij de ReadMe van mijn API
 
 # 🤔 Mijn idee
 
-Ik wil een film quiz maken met gebruik van een API. De API die ik ga gebruiken is van MovieDB. Als templating engine ga ik gebruik maken van EJS
+Ik wil een film quiz maken met gebruik van een API. De API die ik ga gebruiken is van MovieDB. Ook is er in mijn project een web API te vinden. Hiervoor heb ik 'BatteryManager' gebruikt. Als templating engine ga ik gebruik maken van EJS. 
 
 ## ❔ Wat ga ik allemaal verwerken?
 
@@ -19,7 +19,11 @@ Ik wil een film quiz maken met gebruik van een API. De API die ik ga gebruiken i
 
 Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen. Of je moet de pagina inspecteren (voor laptop/pc gebruikers). -->
 
-## Gebouwd met behulp van:
+## 📝 Schetsen
+
+[afbeelding]
+
+## ⚙️ Gebouwd met behulp van:
 - node.js
 - git
 - ejs
