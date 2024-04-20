@@ -304,8 +304,62 @@ svg {
   fill: white;
 }
 
-#opladen {
+.opladen {
+  margin-top: 2vw;
+  background: linear-gradient(#6f86ff, #6f86ff, white);
+  padding: 3em;
+  border-radius: 5em;
+}
+
+#stats {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1em;
+}
+
+#searchPage {
   margin-top: 10vw;
+  background: linear-gradient(#6f86ff, #6f86ff, white);
+  padding: 3em;
+  border-radius: 5em;
+  text-align: center;
+}
+
+#searchPage a {
+  color: black;
+}
+
+#quizPage {
+  margin-top: 10vw;
+  background: linear-gradient(#6f86ff, #6f86ff, white);
+  padding: 3em;
+  border-radius: 5em;
+  text-align: center;
+}
+
+button {
+  background-color: #6f86ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 1em;
+  margin-top: 1em;
+}
+
+button:hover {
+  background-color: white;
+  color: #6f86ff;
+}
+
+button {
+  /* background-color: linear-gradient(#6f86ff, #6f86ff, white); */
+  /* color: white; */
+  border: none;
+  padding: 10px;
+  border-radius: 1em;
+}
+
+ul button {
 }
 
 @keyframes rotate {
@@ -352,6 +406,9 @@ svg {
   #movies-container {
     gap: 2rem;
     justify-content: center;
+  }
+  svg {
+    display: none;
   }
 }
 
