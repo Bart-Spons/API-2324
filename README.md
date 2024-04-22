@@ -23,6 +23,72 @@ Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina 
 
 [afbeelding]
 
+# Mijn proces
+
+## Week 1
+
+Ik ben de eerste week bezig geweest met een API kiezen en fetchen. Ik heb gekozen voor de MovieDB API. Ik heb op Github de repository van school gecloned en een eigen versie ervan gemaakt. Deze heb ik ingericht naar mijn eigen wensen en deze is hieronder te vinden. 
+
+Ik ben deze week ook begonnen met het schetsen van mij ideeën. Deze heb ik aan het einde van de week besproken met mij docent en deze waren goedgekeurd.
+
+
+### :construction: Mappenstructuur
+```
+|--- .git
+|--- node_modules
+|--- public
+    |--- images
+    |--- fonts
+    |--- scripts
+        |--- highscore.js
+        |--- main.js
+        |--- menu.js
+        |--- quiz.js
+    |--- stylesheets
+        |--- main.css
+        |--- galley.css
+        |--- menu.css
+|--- views
+    |--- components
+        |--- api.ejs
+        |--- topmovies.ejs
+       
+    |--- pages
+        |--- highscore.ejs
+        |--- index.ejs
+        |--- movies.ejs
+        |--- quiz.ejs
+        |--- search.ejs
+    |--- partials      
+        |--- footer.ejs
+        |--- head.ejs
+        |--- nav.ejs
+.DS_Store
+.editorconfig
+.env
+.ejlintrc.json
+.gitignore
+LICENCE
+package-lock.json
+package.json
+README.md
+server.js
+
+```
+
+## Week 2
+
+- zoek functie
+- Quiz werkend
+- Highscores
+- top 20 movies grid
+
+## Week 3
+
+- home pagina
+- web api
+- quiz verbeterd
+
 ## ⚙️ Gebouwd met behulp van:
 - node.js
 - git

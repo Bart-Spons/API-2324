@@ -3,7 +3,7 @@
   <head>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="../styles/gallery.css" />
-    <title>Welkom bij Mijn API website</title>
+    <title>Welcome to my API website</title>
   </head>
 
   <body>
@@ -22,38 +22,6 @@
         </div>
       </section>
 
-      <!-- <svg width="100" height="100" viewBox="0 0 24 24">
-        <path
-          d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z"
-        />
-      </svg> -->
-
-      <!-- <section class="home">
-        <h2>API</h2>
-        <p>
-          Dit is een website waar je verschillende API's kunt vinden en
-          gebruiken. Je kunt hier informatie vinden over verschillende
-          onderwerpen zoals:
-        </p> -->
-
-      <!-- <section class="grid-container">
-        <div class="grid-item">
-          <a href="/movies">Popular movies</a>
-        </div>
-
-        <div class="grid-item">
-          <a href="/search">Seach</a>
-        </div>
-        <div class="grid-item">
-          <a href="/quiz">Quiz</a>
-        </div>
-
-        <div class="grid-item">
-          <a href="/highscore">Highscore</a>
-        </div>
-      </section> -->
-      <!-- </section> -->
-
       <section class="opladen">
         <p>
           Do you want to see the current top 20 movies? Plug in your charger!
@@ -70,6 +38,7 @@
         </section>
       </section>
 
+      <!-- scroll svsg -->
       <section>
         <svg
           fill="#000000"
@@ -152,18 +121,12 @@ c4-1.078,6.368-5.194,5.29-9.193C428.564,161.564,401.221,123.118,363.425,97.287z"
         </svg>
       </section>
 
-      <!-- <section id="chargingBattery">
-        <section id="chargingLeft">
-          
-        </section>
-
-        <section id="chargingRight"></section>
-      </section> -->
-
+      <!-- top 20 -->
       <section id="gridMovies">
         <h2>Top 20</h2>
         <%- include('../components/api.ejs') %>
 
+        <!-- search -->
         <section id="searchPage">
           <p>
             Is your favorite movie not in the top 20? Search for it and find out
@@ -177,8 +140,8 @@ c4-1.078,6.368-5.194,5.29-9.193C428.564,161.564,401.221,123.118,363.425,97.287z"
         </section>
       </section>
 
+      <!-- quiz -->
       <section id="quizPage">
-        <!-- <p>⁉️ Test your knowledge about movies with our quiz 💡</p> -->
         <marquee direction="right">
           Test your knowledge about movies with our quiz
         </marquee>
