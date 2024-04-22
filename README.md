@@ -77,17 +77,17 @@ server.js
 ```
 
 ## Week 2
+### Zoek functie
+Ik heb een pagina gemaakt waar een API in gefetched wordt waar alle films van MovieDB instaan. 
 
-- zoek functie
-- Quiz werkend
-- Highscores
-- top 20 movies grid
+### Quiz werkend en highscore pagina
+Ik heb een quiz gemaakt waar de gebruiker zijn/haar naam moet invullen. Vervolgens worden vijf willekeurige films ingeladen van de 'top ranked movies' van MovieDB. Deze worden willekeurig gegenereerd. De score wordt getoond en vervolgens wordt deze opgeslagen in de localhost.
 
 ## Week 3
 
-- home pagina
-- web api
-- quiz verbeterd
+### Home pagina met een Web Api
+Op mijn homepagina heb ik een web API geïmplementeerd die reageert op het aansluiten van de oplader in een laptop. Wanneer de oplader wordt aangesloten, wordt er automatisch andere content geladen. Dit zorgt voor een interactieve en dynamische gebruikerservaring.
+
 
 ## ⚙️ Gebouwd met behulp van:
 - node.js
