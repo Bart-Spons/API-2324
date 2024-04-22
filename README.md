@@ -84,6 +84,12 @@ Ik heb een quiz gemaakt waar de gebruiker zijn/haar naam moet invullen. Vervolge
 ### Home pagina met een Web Api
 Op mijn homepagina heb ik een web API geïmplementeerd die reageert op het aansluiten van de oplader in een laptop. Wanneer de oplader wordt aangesloten, wordt er automatisch andere content geladen. Dit zorgt voor een interactieve en dynamische gebruikerservaring.
 
+## API
+
+Ik ben als grote/fetch API de <a href="https://developer.themoviedb.org/reference/intro/getting-started" >MovieDB API</a> gebruikt
+
+Als web api heb ik <a href="https://www.w3.org/TR/battery-status/#examples">'Battery Charger API'</a> gebruikt.
+
 
 ## ⚙️ Gebouwd met behulp van:
 - node.js
