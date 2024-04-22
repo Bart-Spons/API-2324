@@ -19,10 +19,6 @@ Ik wil een film quiz maken met gebruik van een API. De API die ik ga gebruiken i
 
 Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen. Of je moet de pagina inspecteren (voor laptop/pc gebruikers). -->
 
-## 📝 Schetsen
-
-[afbeelding]
-
 # Mijn proces
 
 ## Week 1
