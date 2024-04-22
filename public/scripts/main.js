@@ -30,11 +30,24 @@ window.onload = function () {
         if (battery.charging) {
             document.getElementById('chargingOn').style.display = 'block';
             document.getElementById('chargingOff').style.display = 'none';
+            document.getElementById('gridMovies').style.transition = 'transform 2s ease-in-out';
+            document.getElementById('gridMovies').style.display = 'grid';
+            document.querySelector('.opladen').style.backgroundColor = 'green';
+            document.querySelectorAll('#boxWrapper div').forEach(function (div) {
+                div.style.backgroundColor = 'green';
+            });
         } else {
             document.getElementById('chargingOn').style.display = 'none';
             document.getElementById('chargingOff').style.display = 'block';
+            document.getElementById('gridMovies').style.display = 'none';
+            document.querySelector('.opladen').style.backgroundColor = '#6f86ff';
+            document.querySelectorAll('#boxWrapper div').forEach(function (div) {
+                div.style.backgroundColor = '#6f86ff';
+            });
         }
     }
+
+
 
     navigator.getBattery().then(function (battery) {
         // Update the battery status initially when the promise resolves ...
@@ -120,3 +133,4 @@ if (movies.length) {
         }, "+=0.1"); // Delay relative to the last animation
     });
 }
+

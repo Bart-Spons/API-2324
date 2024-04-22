@@ -21,6 +21,7 @@
           <div>E</div>
         </div>
       </section>
+
       <!-- <svg width="100" height="100" viewBox="0 0 24 24">
         <path
           d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z"
@@ -55,8 +56,7 @@
 
       <section class="opladen">
         <p>
-          Do you have enough battery to watch a movie? Plug in the charger to
-          see your battery level.
+          Do you want to see the current top 20 movies? Plug in your charger!
         </p>
 
         <!-- charging state -->
@@ -71,7 +71,6 @@
       </section>
 
       <section>
-        <h2>Top 20</h2>
         <svg
           fill="#000000"
           height="80px"
@@ -161,22 +160,28 @@ c4-1.078,6.368-5.194,5.29-9.193C428.564,161.564,401.221,123.118,363.425,97.287z"
         <section id="chargingRight"></section>
       </section> -->
 
-      <section><%- include('../components/api.ejs') %></section>
+      <section id="gridMovies">
+        <h2>Top 20</h2>
+        <%- include('../components/api.ejs') %>
 
-      <section id="searchPage">
-        <p>
-          Is your favorite movie not in the top 20? Search for it and find out
-        </p>
-        <button id="searchButton">
-          <a href="search">Search</a>
-        </button>
+        <section id="searchPage">
+          <p>
+            Is your favorite movie not in the top 20? Search for it and find out
+          </p>
+          <button id="searchButton">
+            <a href="search">Search</a>
+          </button>
 
-        <!-- charging state -->
-        <section id="stats2"></section>
+          <!-- charging state -->
+          <section id="stats2"></section>
+        </section>
       </section>
 
       <section id="quizPage">
-        <p>Test your knowledge about movies with our quiz</p>
+        <!-- <p>⁉️ Test your knowledge about movies with our quiz 💡</p> -->
+        <marquee direction="right">
+          Test your knowledge about movies with our quiz
+        </marquee>
         <button id="quizButton">
           <a href="quiz">Quiz</a>
         </button>

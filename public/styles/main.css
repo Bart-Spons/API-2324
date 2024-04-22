@@ -21,9 +21,25 @@ form {
   text-decoration: none;
 }
 
+/* font */
+@font-face {
+  font-family: "Tilt";
+  src: url("../fonts/TiltPrism[XROT,YROT].woff2");
+}
+
 body {
   min-height: 200vh;
+
   /* background-color: #333;  */
+}
+
+marquee {
+  font-family: Tilt;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 body {
@@ -306,20 +322,28 @@ svg {
 
 .opladen {
   margin-top: 2vw;
-  background: linear-gradient(#6f86ff, #6f86ff, white);
+  /* background: linear-gradient(#6f86ff, #6f86ff, white); */
+  background-color: #6f86ff;
   padding: 3em;
   border-radius: 5em;
+  border: solid 10px white;
 }
 
 #stats {
   display: flex;
   /* justify-content: center; */
   gap: 1em;
+  margin-left: 5rem;
+}
+
+.greenbg {
+  background-color: green;
 }
 
 #searchPage {
   margin-top: 10vw;
-  background: linear-gradient(#6f86ff, #6f86ff, white);
+  /* background: linear-gradient(#6f86ff, #6f86ff, white); */
+  background-color: #6f86ff;
   padding: 3em;
   border-radius: 5em;
   text-align: center;
@@ -331,10 +355,16 @@ svg {
 
 #quizPage {
   margin-top: 10vw;
-  background: linear-gradient(#6f86ff, #6f86ff, white);
-  padding: 3em;
-  border-radius: 5em;
+  /* background: linear-gradient(#6f86ff, #6f86ff, white); */
+  padding: 2em;
+  border-radius: 2em;
   text-align: center;
+  color: black;
+  background-color: white;
+}
+
+#quizButton {
+  font-size: 2rem;
 }
 
 button {
