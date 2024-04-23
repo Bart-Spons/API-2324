@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import fetch from 'node-fetch';
+require('dotenv').config();
+
 // import powerInfo from 'node-power-info';
 
 dotenv.config();
