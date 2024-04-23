@@ -9,7 +9,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon server.js --ext js,ejs",
     "dev:client": "vite --config vite.config.js",
-    "build": "npm-run-all build:*",
+    "build": "cp -r public dist",
     "build:client": "vite build"
   },
   "license": "MIT",
